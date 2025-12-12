@@ -4,8 +4,11 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const authMiddleware = require("../middlewares/authMiddleware");
 
-// user registration
+router.get("/", (req, res) => {
+  res.send("User route working !!");
+});
 
+// user registration
 router.post("/register", async (req, res) => {
   try {
     // check if user already exists
