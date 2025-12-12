@@ -1,6 +1,17 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
-require("dotenv").config();
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: "https://quiz-app-main-sigma.vercel.app/",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // If you need to handle cookies or authorization headers
+  })
+);
 app.use(express.json());
 const dbConfig = require("./config/dbConfig");
 

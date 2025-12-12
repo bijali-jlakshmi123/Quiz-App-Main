@@ -1,15 +1,22 @@
 {
-  "version": 2,
-  "builds": [
+  "headers": [
     {
-      "src": "server.js",
-      "use": "@vercel/node"
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://quiz-app-main-sigma.vercel.app"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/server.js"
-    }
-  ]
+  "rewrites": [{ "source": "/api/(.*)", "destination": "server.js" }]
 }
