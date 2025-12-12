@@ -2,7 +2,7 @@ const { default: axiosInstance } = require(".");
 
 export const registerUser = async (payload) => {
     try {
-        const response = await axiosInstance.post('/api/users/register', payload);
+        const response = await axiosInstance.post('https://quiz-app-main-server.vercel.app/api/users/register', payload);
         return response.data;
     } catch (error) {
         return error.response.data;
@@ -11,7 +11,7 @@ export const registerUser = async (payload) => {
 
 export const loginUser = async (payload) => {
     try {
-        const response = await axiosInstance.post('/api/users/login', payload);
+        const response = await axiosInstance.post('https://quiz-app-main-server.vercel.app/api/users/login', payload);
         return response.data;
     } catch (error) {
         return error.response.data;
@@ -20,7 +20,7 @@ export const loginUser = async (payload) => {
 
 export const getUserInfo = async () => {
     try {
-        const response = await axiosInstance.post('/api/users/get-user-info');
+        const response = await axiosInstance.post('https://quiz-app-main-server.vercel.app/api/users/get-user-info');
         return response.data;
     } catch (error) {
         return error.response.data;
