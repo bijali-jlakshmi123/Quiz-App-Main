@@ -4,15 +4,9 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-app.use(
-  cors({
-    origin: "https://quiz-app-main-sigma.vercel.app/",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true, // If you need to handle cookies or authorization headers
-  })
-);
 app.use(express.json());
+app.use(cors());
+
 const dbConfig = require("./config/dbConfig");
 
 const usersRoute = require("./routes/usersRoute");
