@@ -15,7 +15,7 @@ function Login() {
       if (response.success) {
         message.success(response.message);
         localStorage.setItem("token", response.data);
-        if (response?.data?.isadmin) {
+        if (response?.data?.isAdmin) {
           window.location.href = "/admin/exams";
         } else {
           window.location.href = "/";
