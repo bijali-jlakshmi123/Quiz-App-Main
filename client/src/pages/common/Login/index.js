@@ -16,7 +16,7 @@ function Login() {
         message.success(response.message);
         localStorage.setItem("token", response.data);
 
-        console.log(reponse.isAdmin);
+        console.log(response.isAdmin);
 
         if (response.isAdmin) {
           window.location.href = "/admin/exams";
