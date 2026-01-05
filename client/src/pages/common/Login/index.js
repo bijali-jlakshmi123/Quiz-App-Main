@@ -15,7 +15,11 @@ function Login() {
       if (response.success) {
         message.success(response.message);
         localStorage.setItem("token", response.data);
-        window.location.href = "/admin/exams";
+        if (response?.data?.isadmin) {
+          window.location.href = "/admin/exams";
+        } else {
+          window.location.href = "/";
+        }
       } else {
         message.error(response.message);
       }
