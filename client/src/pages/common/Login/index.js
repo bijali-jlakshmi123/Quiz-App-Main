@@ -11,6 +11,7 @@ function Login() {
     try {
       dispatch(ShowLoading());
       const response = await loginUser(values);
+      console.log(response);
       dispatch(HideLoading());
       if (response.success) {
         message.success(response.message);
