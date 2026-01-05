@@ -76,6 +76,7 @@ router.post("/login", async (req, res) => {
       message: "User logged in successfully",
       success: true,
       data: token,
+      isAdmin: user.isAdmin,
     });
   } catch (error) {
     res.status(500).send({
