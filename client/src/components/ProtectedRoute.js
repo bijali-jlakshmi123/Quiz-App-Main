@@ -44,12 +44,12 @@ function ProtectedRoute({ children }) {
   ];
 
   const adminMenu = [
-    {
-      title: "Home",
-      paths: ["/", "/user/write-exam"],
-      icon: <i className="ri-home-line"></i>,
-      onClick: () => navigate("/"),
-    },
+    // {
+    //   title: "Home",
+    //   paths: ["/", "/user/write-exam"],
+    //   icon: <i className="ri-home-line"></i>,
+    //   onClick: () => navigate("/"),
+    // },
     {
       title: "Exams",
       paths: ["/admin/exams", "/admin/exams/add"],
