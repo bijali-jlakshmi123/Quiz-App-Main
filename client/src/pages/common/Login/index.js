@@ -15,7 +15,10 @@ function Login() {
       if (response.success) {
         message.success(response.message);
         localStorage.setItem("token", response.data);
-        if (response?.data?.isAdmin) {
+
+        console.log(reponse.isAdmin);
+
+        if (response.isAdmin) {
           window.location.href = "/admin/exams";
         } else {
           window.location.href = "/";
@@ -34,8 +37,9 @@ function Login() {
       <div className="card w-400 p-3 bg-white">
         <div className="flex flex-col">
           <div className="flex">
-            <h1 className="text-2xl">QUIZ - LOGIN <i class="ri-login-circle-line"></i></h1>
-            
+            <h1 className="text-2xl">
+              QUIZ - LOGIN <i class="ri-login-circle-line"></i>
+            </h1>
           </div>
           <div className="divider"></div>
           <Form layout="vertical" className="mt-2" onFinish={onFinish}>

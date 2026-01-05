@@ -10,13 +10,13 @@ export const registerUser = async (payload) => {
 }
 
 export const loginUser = async (payload) => {
-    try {
-        const response = await axiosInstance.post('https://quiz-app-main-server.vercel.app/api/users/login', payload);
-        return response.data;
-    } catch (error) {
-        return error.response.data;
-    }
-}
+  try {
+    const response = await axiosInstance.post("/api/users/login", payload);
+    return response;
+  } catch (error) {
+    return error.response.data;
+  }
+};
 
 export const getUserInfo = async () => {
     try {
